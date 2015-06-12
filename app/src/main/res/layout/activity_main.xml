@@ -10,16 +10,20 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-
-
-        android:fadeScrollbars="false"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         app:backgroundTint="@color/accent"
         android:src="@drawable/ic_add_white_48dp" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/books_gridView"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
