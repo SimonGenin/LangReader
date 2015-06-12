@@ -1,0 +1,26 @@
+MainActivity
+------------
+
+In this view, we shall see all of the owned book, with card design.
+In the options, a way to sort them ( added date, most read, most pages )
+
+A floating action button would be there to import new books
+
+BookDetailsActivity
+-------------------
+Once clicked on a book, we show the details (info + stats)
+? Add missing info ?
+Button to start the reading
+
+OptionsActivity
+---------------
+Show translation (long - short)
+Show definition
+Which language ? (Default == device language)
+
+
+
+
+
+
+
