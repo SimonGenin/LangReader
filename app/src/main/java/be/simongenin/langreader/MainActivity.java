@@ -1,5 +1,7 @@
 package be.simongenin.langreader;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -57,9 +59,41 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_sort) {
-            return true;
+            sortSelectDialog();
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    private void sortSelectDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select a sorting option");
+        builder.setItems(R.array.sort_options, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+
+                switch(item)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4 :
+                        break;
+                    case 5 :
+                        break;
+
+                }
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+
 }
