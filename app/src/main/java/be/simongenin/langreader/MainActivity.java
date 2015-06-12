@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     @InjectView(R.id.books_gridView)
     GridView gv;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the toolbar
         setSupportActionBar(toolbar);
+
+
 
     }
 
