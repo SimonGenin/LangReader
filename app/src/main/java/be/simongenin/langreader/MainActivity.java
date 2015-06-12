@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
 
+import be.simongenin.langreader.adapters.BooksGridAdapter;
+import be.simongenin.langreader.tests.DummyData;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the toolbar
         setSupportActionBar(toolbar);
+
+        BooksGridAdapter adapter = new BooksGridAdapter(this, DummyData.books);
+        gv.setAdapter(adapter);
 
 
 

@@ -7,6 +7,8 @@ import be.simongenin.langreader.models.Book;
 
 public class DummyData {
 
+    public static ArrayList<Book> books = new ArrayList<>();
+
     static {
 
         Book b1 = new Book("Harry Potter et la chambre des secrets", "J.K Rowling");
@@ -14,7 +16,18 @@ public class DummyData {
         Book b3 = new Book("Eragon", "Some one");
         Book b4 = new Book("Meto", "Quelqu'un");
 
-        ArrayList<Book> books = new ArrayList<>();
+        books.add(b1);
+        books.add(b2);
+        books.add(b3);
+        books.add(b4);
+        books.add(b1);
+        books.add(b2);
+        books.add(b3);
+        books.add(b4);
+        books.add(b1);
+        books.add(b2);
+        books.add(b3);
+        books.add(b4);
         books.add(b1);
         books.add(b2);
         books.add(b3);
