@@ -2,6 +2,7 @@ package be.simongenin.langreader;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,10 +33,13 @@ public class MainActivity extends AppCompatActivity {
         // Set the toolbar
         setSupportActionBar(toolbar);
 
+        // If landscape, three columns
+        if (Configuration.ORIENTATION_LANDSCAPE == getResources().getConfiguration().orientation) {
+            gv.setNumColumns(3);
+        }
+
         BooksGridAdapter adapter = new BooksGridAdapter(this, DummyData.books);
         gv.setAdapter(adapter);
-
-
 
     }
 
