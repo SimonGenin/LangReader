@@ -33,6 +33,8 @@ public class DummyData {
         books.add(b3);
         books.add(b4);
 
+        books.clear();
+
     }
 
 }

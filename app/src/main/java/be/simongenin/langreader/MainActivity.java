@@ -2,14 +2,17 @@ package be.simongenin.langreader;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
 
+import be.simongenin.langreader.activities.SettingsActivity;
 import be.simongenin.langreader.adapters.BooksGridAdapter;
 import be.simongenin.langreader.tests.DummyData;
 import butterknife.ButterKnife;
@@ -24,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     @InjectView(R.id.books_gridView)
     GridView gv;
 
+    @InjectView(R.id.fab)
+    FloatingActionButton fab;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the toolbar
         setSupportActionBar(toolbar);
+
+        // Set the empty view
+        gv.setEmptyView(findViewById(R.id.empty_view));
 
         // If landscape, three columns
         if (Configuration.ORIENTATION_LANDSCAPE == getResources().getConfiguration().orientation) {
@@ -59,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
         }
 
         if (id == R.id.action_sort) {
@@ -106,6 +117,5 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
     }
-
 
 }
