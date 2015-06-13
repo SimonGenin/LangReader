@@ -15,5 +15,6 @@
         <item>Least Pages</item>
         <item>Marked</item>
     </array>
+    <string name="title_activity_settings">SettingsActivity</string>
 
 </resources>
