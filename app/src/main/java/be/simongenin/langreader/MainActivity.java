@@ -68,11 +68,16 @@ public class MainActivity extends AppCompatActivity {
     private void sortSelectDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Select a sorting option");
+        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
         builder.setItems(R.array.sort_options, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
 
-                switch(item)
-                {
+                switch (item) {
                     case 0:
                         break;
                     case 1:
@@ -81,11 +86,14 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         break;
-                    case 4 :
+                    case 4:
                         break;
-                    case 5 :
+                    case 5:
                         break;
-
+                    case 6:
+                        break;
+                    case 7:
+                        break;
                 }
             }
         });

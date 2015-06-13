@@ -6,6 +6,8 @@
     <string name="action_sort">Sort</string>
 
     <array name="sort_options">
+        <item>By title</item>
+        <item>By author</item>
         <item>Newest</item>
         <item>Oldest</item>
         <item>Most Read</item>
