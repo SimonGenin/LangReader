@@ -1,8 +1,104 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="be.simongenin.langreader.activities.SettingsActivity">
 
-    <include layout="@layout/toolbar" android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="64dp"
+            android:id="@+id/settings_translation_bloc"
+            android:padding="16dp"
+            android:background="@drawable/settings_bloc_bg"
+            android:clickable="true"
+            >
+
+            <TextView
+                android:id="@+id/show_trans_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Show translation"
+                android:textSize="24sp" />
+
+
+            <CheckBox
+                android:id="@+id/show_translation_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:textSize="24sp"
+                android:clickable="false"
+                android:background="@android:color/transparent"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="64dp"
+            android:id="@+id/settings_definition_bloc"
+            android:padding="16dp"
+            android:background="@drawable/settings_bloc_bg"
+            android:clickable="true"
+
+            >
+
+            <TextView
+                android:id="@+id/show_def_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Show definition"
+                android:textSize="24sp" />
+
+
+            <CheckBox
+                android:id="@+id/show_definition_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:textSize="24sp"
+                android:clickable="false"
+                android:background="@android:color/transparent"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+
+    </LinearLayout>
 
 </RelativeLayout>

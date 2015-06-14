@@ -22,5 +22,3 @@ Which language ? (Default == device language)
 
 
 
-
-
