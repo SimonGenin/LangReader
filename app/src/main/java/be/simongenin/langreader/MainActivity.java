@@ -3,6 +3,7 @@ package be.simongenin.langreader;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,13 +11,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
+import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import be.simongenin.langreader.activities.SettingsActivity;
 import be.simongenin.langreader.adapters.BooksGridAdapter;
 import be.simongenin.langreader.tests.DummyData;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.epub.EpubReader;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,6 +58,29 @@ public class MainActivity extends AppCompatActivity {
 
         BooksGridAdapter adapter = new BooksGridAdapter(this, DummyData.books);
         gv.setAdapter(adapter);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pdfHandling();
+            }
+        });
+
+    }
+
+    private void pdfHandling() {
+
+        AssetManager assetManager = getAssets();
+        try {
+
+            InputStream epubInputStream = assetManager.open("books/hp7.epub");
+            Book book = (new EpubReader()).readEpub(epubInputStream);
+            Toast.makeText(this, book.getTitle(), Toast.LENGTH_SHORT).show();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
