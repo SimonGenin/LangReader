@@ -17,10 +17,11 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import be.simongenin.langreader.activities.SettingsActivity;
 import be.simongenin.langreader.adapters.BooksGridAdapter;
-import be.simongenin.langreader.tests.DummyData;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nl.siegmann.epublib.domain.Book;
@@ -56,7 +57,45 @@ public class MainActivity extends AppCompatActivity {
             gv.setNumColumns(3);
         }
 
-        BooksGridAdapter adapter = new BooksGridAdapter(this, DummyData.books);
+        // Dummy books
+        AssetManager assetManager = getAssets();
+        List<Book> books = new ArrayList<>();
+        Book book = null;
+        try {
+
+            InputStream epubInputStream = assetManager.open("books/hp7.epub");
+            book = (new EpubReader()).readEpub(epubInputStream);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+        books.add(book);
+
+        BooksGridAdapter adapter = new BooksGridAdapter(this, books);
         gv.setAdapter(adapter);
 
         fab.setOnClickListener(new View.OnClickListener() {
